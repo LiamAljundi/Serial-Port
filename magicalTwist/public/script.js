@@ -48,12 +48,32 @@ function initWebsocket() {
 
 //rotation
  function colorTheBackground(event){
-  if (event.rot.alpha > 8 && event.rot.alpha < 45) {
-    document.body.style.backgroundColor = "red";
-  } else if (event.rot.alpha > 46 && event.rot.alpha < 50) {
-    document.body.style.backgroundColor = "blue";
-  } else if (event.rot.alpha > 329 && event.rot.alpha < 342 ) {
-  document.body.style.backgroundColor = "green";
+  if (event.rot.alpha > 0 && event.rot.alpha < 15) {
+    document.body.style.backgroundColor = "gold";}
+    else if (event.rot.alpha > 15 && event.rot.alpha < 30) {
+      document.body.style.backgroundColor = "orange" ;
+  } else if (event.rot.alpha > 30 && event.rot.alpha < 45 ) {
+  document.body.style.backgroundColor = "red";}
+  else if (event.rot.alpha > 45 && event.rot.alpha < 60 ) {
+    document.body.style.backgroundColor = "maroon";
+  }
+  else if (event.rot.alpha > 60 && event.rot.alpha < 75 ) {
+    document.body.style.backgroundColor = "purple"; 
+  }
+  else if (event.rot.alpha > 75 && event.rot.alpha < 90 ) {
+    document.body.style.backgroundColor = "navy"; 
+  }
+  else if (event.rot.alpha > 90 && event.rot.alpha < 105 ) {
+    document.body.style.backgroundColor = "blue"; 
+  }
+  else if (event.rot.alpha > 105 && event.rot.alpha < 120 ) {
+    document.body.style.backgroundColor = "aqua";   
+  }
+  else if (event.rot.alpha > 120 && event.rot.alpha < 135 ) {
+    document.body.style.backgroundColor = "green";   
+  }
+  else if (event.rot.alpha > 135 && event.rot.alpha < 150 ) {
+    document.body.style.backgroundColor = "lime";   
   }
 };
  
