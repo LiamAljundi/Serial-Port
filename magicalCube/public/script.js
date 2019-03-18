@@ -93,7 +93,7 @@ console.log("Hello");
   }
 };
  */
-
+// asd
 function showData(m) {
   let html = 'accel';
   html += '<table><tr><td>' + m.accel.x.toFixed(3) + '</td><td>' + m.accel.y.toFixed(3) + '</td><td>' + m.accel.z.toFixed(3) + '</tr></table>';
