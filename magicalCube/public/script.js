@@ -72,16 +72,27 @@ console.log("Hello");
 }; */
 
 //sideways
-function colorTheBackground(event){
-  if (event.rot.gamma > 0 && event.rot.beta < 1) {
+ function colorTheBackground(event){
+  if (event.rot.gamma > 0 && event.rot.gamma < 30 && event.rot.beta < 1 && event.rot.beta > -178) {
     document.body.style.backgroundColor = "red";
   } else if (event.rot.gamma < -60) {
     document.body.style.backgroundColor = "blue";
-  } else if (event.rot.alpha > 220 ) {
+  } else if (event.rot.alpha > 220 && event.rot.beta < -179) {
+  document.body.style.backgroundColor = "green";
+  }
+}; 
+
+//rotation
+/* function colorTheBackground(event){
+  if (event.rot.alpha > 8 && event.rot.alpha < 45) {
+    document.body.style.backgroundColor = "red";
+  } else if (event.rot.alpha > 46 && event.rot.alpha < 50) {
+    document.body.style.backgroundColor = "blue";
+  } else if (event.rot.alpha > 329 && event.rot.alpha < 342 ) {
   document.body.style.backgroundColor = "green";
   }
 };
-
+ */
 
 function showData(m) {
   let html = 'accel';
