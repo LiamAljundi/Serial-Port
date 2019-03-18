@@ -46,7 +46,6 @@ function initWebsocket() {
 }
 
 /* //window.addEventListener("deviceorientation", handleOrientation, true);
-
 function handleOrientation(event) {
   if (200 > event.alpha > 129) {
 document.body.style.backgroundColor = "red";
@@ -72,6 +71,7 @@ console.log("Hello");
 }; */
 
 //sideways
+/*
  function colorTheBackground(event){
   if (event.rot.gamma > 0 && event.rot.gamma < 30 && event.rot.beta < 1 && event.rot.beta > -178) {
     document.body.style.backgroundColor = "red";
@@ -81,6 +81,22 @@ console.log("Hello");
   document.body.style.backgroundColor = "green";
   }
 }; 
+*/
+
+function colorTheBackground(event){
+  if (event.rot.beta > -1 && event.rot.beta < 80 ) {
+    console.log("Hello bye");
+    document.body.style.backgroundColor = "red";
+  }
+ else if(event.rot.beta > 81 && event.rot.beta <170  )
+ { document.body.style.backgroundColor = "blue";}
+
+ else if(event.rot.beta >170 && event.rot.beta < 200 )
+ { document.body.style.backgroundColor = "green";}
+
+ else if(event.rot.beta >-105 && event.rot.beta < -95 )
+ { document.body.style.backgroundColor = "yellow";}
+};
 
 //rotation
 /* function colorTheBackground(event){
