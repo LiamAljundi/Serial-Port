@@ -46,3 +46,10 @@ function onDocumentReady() {
         socket.send(send);  
     })
 }
+
+function turnOn() {
+    document.getElementById('sendtoSerial').value = 'a';
+  }
+  function turnOff() {
+    document.getElementById('sendtoSerial').value = 'b';
+  }
