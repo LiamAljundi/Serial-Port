@@ -82,7 +82,7 @@ console.log("Hello");
   }
 }; 
 */
-
+/* 
 function colorTheBackground(event){
   if (event.rot.beta > -1 && event.rot.beta < 80 ) {
     console.log("Hello bye");
@@ -97,9 +97,9 @@ function colorTheBackground(event){
  else if(event.rot.beta >-105 && event.rot.beta < -95 )
  { document.body.style.backgroundColor = "yellow";}
 };
-
+ */
 //rotation
-/* function colorTheBackground(event){
+ function colorTheBackground(event){
   if (event.rot.alpha > 8 && event.rot.alpha < 45) {
     document.body.style.backgroundColor = "red";
   } else if (event.rot.alpha > 46 && event.rot.alpha < 50) {
@@ -108,8 +108,8 @@ function colorTheBackground(event){
   document.body.style.backgroundColor = "green";
   }
 };
- */
-// asd
+ 
+
 function showData(m) {
   let html = 'accel';
   html += '<table><tr><td>' + m.accel.x.toFixed(3) + '</td><td>' + m.accel.y.toFixed(3) + '</td><td>' + m.accel.z.toFixed(3) + '</tr></table>';
