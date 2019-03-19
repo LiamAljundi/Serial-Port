@@ -1,7 +1,11 @@
-int ledPin = 2;
+int h= 0;
+int m= 0;
+int s= 0;
+int timer = SetTimer(h,m,s);
+
 
 void setup() {
-  pinMode(ledPin, OUTPUT);
+
   Serial.begin(9600);
   while (! Serial);
   Serial.println("Enter On to turn on the LED!");
