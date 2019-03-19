@@ -45,15 +45,23 @@ function initWebsocket() {
   };
 }
 
-
+// > greater < smaller
 //rotation
  function colorTheBackground(event){
-  if (event.rot.alpha > 8 && event.rot.alpha < 45) {
+  if (event.rot.alpha > 6 && event.rot.alpha < 12) {
     document.body.style.backgroundColor = "red";
-  } else if (event.rot.alpha > 46 && event.rot.alpha < 50) {
+  } else if (event.rot.alpha > 0 && event.rot.alpha < 6) {
     document.body.style.backgroundColor = "blue";
-  } else if (event.rot.alpha > 329 && event.rot.alpha < 342 ) {
+  } else if (event.rot.alpha < 360 && event.rot.alpha > 354 ) {
   document.body.style.backgroundColor = "green";
+  } else if (event.rot.alpha < 353 && event.rot.alpha > 337 ) {
+    document.body.style.backgroundColor = "white";
+  } else if (event.rot.alpha < 336 && event.rot.alpha > 330 ) {
+    document.body.style.backgroundColor = "purple";
+  } else if (event.rot.alpha < 329 && event.rot.alpha > 323 ) {
+    document.body.style.backgroundColor = "yellow"; 
+  } else if (event.rot.alpha < 322 && event.rot.alpha > 316 ) {
+    document.body.style.backgroundColor = "teal";
   }
 };
  
