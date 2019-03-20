@@ -40,8 +40,11 @@ board.on('ready', function () {
                 led3.toggle();
         
                 });
+    // Sending data for the  intensity of light
     
-    
+            socket.on('slid', function (data) {
+            led.brightness(data);
+            });
     });
     
     
