@@ -12,6 +12,7 @@ app.use(express.static(__dirname + '/public'));
 board.on('ready', function () {
     var led = new five.Led(10);
     var led2 = new five.Led(11);
+    var led3 = new five.Led(9);
     
    
 
@@ -22,7 +23,7 @@ board.on('ready', function () {
     });
 
     io = io.listen(server);
-
+        // server is listening to the canvas buttons.
     io.on('connection', function (socket) {
     console.log('connected..')
     
@@ -35,6 +36,12 @@ board.on('ready', function () {
             led2.toggle();
     
             });
+            socket.on('blue', function () {
+                led3.toggle();
+        
+                });
+    
+    
     });
     
     
