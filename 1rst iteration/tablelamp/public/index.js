@@ -34,5 +34,25 @@ socket.emit("slid", SlidValue);
 
 }
 
+// adding motion stream features 
+
+window.addEventListener("deviceorientation", handleOrientation, true);
+function handleOrientation(event) {
+if (event.alpha > 100 &&  event.alpha < 200) {
+socket.emit('BlueON');
+} else if (event.alpha > 150 &&  event.alpha < 250) {
+    socket.emit('YellowON');
+    } 
+else if (event.alpha > 300 &&  event.alpha < 310) {
+    socket.emit('RedON');
+    }
+    else if (event.alpha > 50 &&  event.alpha < 100) {
+        socket.emit('AllOFF');
+        }
+}
+
+
+
+
 
 

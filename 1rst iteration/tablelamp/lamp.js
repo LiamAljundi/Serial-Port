@@ -45,9 +45,24 @@ board.on('ready', function () {
             socket.on('slid', function (data) {
             led.brightness(data);
             });
-    });
-    
-    
+   
+    // turning the light on/off by the motion streams 
+                socket.on('RedON', function () {
+                led.on();
+                });
+                socket.on('YellowON', function () {
+                    led2.on();
+                    });
+                  
+                socket.on('BlueON', function () {
+                    led3.on();
+                    });
+                    socket.on('AllOFF', function () {
+                        led.off();
+                        led2.off();
+                        led3.off();
+                        });
+                  
         
-
+            });
 });
