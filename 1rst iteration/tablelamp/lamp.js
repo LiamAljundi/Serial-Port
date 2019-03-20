@@ -32,7 +32,7 @@ board.on('ready', function () {
         });
         
         socket.on('green', function () {
-            led.toggle();
+            led2.toggle();
     
             });
     });

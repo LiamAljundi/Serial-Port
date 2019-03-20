@@ -8,7 +8,7 @@ btn.addEventListener('click', function() {
 });
 
 btn2.addEventListener('click', function() {
-    socket.emit('green');
+    socket.emit('green'); 
 });
 
 
