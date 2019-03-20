@@ -11,6 +11,8 @@ app.use(express.static(__dirname + '/public'));
 
 board.on('ready', function () {
     var led = new five.Led(10);
+    var led2 = new five.Led(11);
+    
    
 
  
@@ -28,6 +30,11 @@ board.on('ready', function () {
         led.toggle();
 
         });
+        
+        socket.on('green', function () {
+            led.toggle();
+    
+            });
     });
     
     
