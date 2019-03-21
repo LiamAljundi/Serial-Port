@@ -38,6 +38,7 @@ socket.emit("slid", SlidValue);
 
 window.addEventListener("deviceorientation", handleOrientation, true);
 function handleOrientation(event) {
+    console.log(event.beta)
 if (event.alpha > 100 &&  event.alpha < 200) {
 socket.emit('BlueON');
 } else if (event.alpha > 150 &&  event.alpha < 250) {
@@ -48,7 +49,14 @@ else if (event.alpha > 300 &&  event.alpha < 310) {
     }
     else if (event.alpha > 50 &&  event.alpha < 100) {
         socket.emit('AllOFF');
-        }
+        } 
+        // Passing the intensity function to the server
+        else if (event.gamma > 40 &&  event.gamma < 80) {
+            socket.emit('intensity');
+            }
+            else if (event.gamma < -30 ) {
+                socket.emit('intensityFull');
+                }
 }
 
 

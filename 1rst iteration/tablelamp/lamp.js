@@ -13,8 +13,13 @@ board.on('ready', function () {
     var led = new five.Led(10);
     var led2 = new five.Led(11);
     var led3 = new five.Led(9);
+    var button = new five.Button(4);
     
-   
+    button.on("release", function() {
+       led.toggle();
+       led2.toggle();
+       led3.toggle();
+      });
 
  
 
@@ -62,7 +67,16 @@ board.on('ready', function () {
                         led2.off();
                         led3.off();
                         });
-                  
-        
+                  // control in intensity of lights
+                  socket.on('intensity', function () {
+                    led.intensity(10);
+                    led2.intensity(10);
+                    led3.intensity(10);
+                    });
+                    socket.on('intensityFull', function () {
+                        led.intensity(100);
+                        led2.intensity(100);
+                        led3.intensity(100);
+                        });
             });
 });
