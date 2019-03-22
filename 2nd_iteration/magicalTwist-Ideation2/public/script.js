@@ -24,6 +24,8 @@ function onData(e) {
   if (!frozen) {
     showData(e);
     colorTheBackground(e);
+    //opacityChange(e);
+
   }
 }
 
@@ -66,9 +68,13 @@ function colorTheBackground(event){
   }
 };
  
-// accel
-
-
+// accel B = 2.3
+function opacityChange(event) {
+  if (event.accel.y > 1) {
+    console.log("hi");
+  }
+};
+opacityChange();
  
 
 function showData(m) {
