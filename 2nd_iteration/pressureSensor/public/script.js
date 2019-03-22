@@ -47,17 +47,3 @@ function onDocumentReady() {
     })
 }
 
-    function lightOff() {
-    document.getElementsByClassName('sendtoSerial').value = '0';
-  }function light1() {
-    document.getElementsByClassName('sendtoSerial').value = '1';
-  }
-  function light2() {
-    document.getElementsByClassName('sendtoSerial').value = '2';
-  }
-  function light3() {
-    document.getElementsByClassName('sendtoSerial').value = '3';
-  }
-  function light4() {
-    document.getElementsByClassName('sendtoSerial').value = '4';
-  }

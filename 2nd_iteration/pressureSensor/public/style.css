@@ -32,13 +32,3 @@ a:hover {
   background: white;
 }
 
-#sendForm{
-  
-  display: grid;
-  grid-template: 50px / repeat(5, 1fr);
-  grid-gap: 2em;
-}
-
-.sendtoSerial{
-  border: 2px orange solid;
-}
