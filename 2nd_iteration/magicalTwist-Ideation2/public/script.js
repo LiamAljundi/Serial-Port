@@ -81,6 +81,8 @@ function colorTheBackground(event){
 function opacityChange(event) {
   if (event.accel.y > 3.2) {
     console.log("hi");
+  } else if (event.accel.y < 1) {
+    console.log("hello");
   }
 };
 opacityChange();
