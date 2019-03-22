@@ -47,16 +47,28 @@ function initWebsocket() {
   };
 }
 
+//creating initial value for opacity
+let lightnessLevel= 100;
+
+function changeLightness() {
+  lightnessLevel--;
+  if (lightnessLevel=0){
+    lightnessLevel=100;
+  }
+    //return hue saturation and lightness
+    return "hsl(120,+ 100%,"+ lightnessLevel+"%)";
+    //hsl stands for (hue, saturation, lightness)
+}
 
 // > greater < smaller
 //rotation
 function colorTheBackground(event){
   if (event.rot.alpha > 6 && event.rot.alpha < 12) {
-    document.body.style.backgroundColor = "red";
+    changeLightness();
   } else if (event.rot.alpha > 0 && event.rot.alpha < 6) {
-    document.body.style.backgroundColor = "blue";
+    changeLightness();
   } else if (event.rot.alpha < 360 && event.rot.alpha > 354 ) {
-  document.body.style.backgroundColor = "green";
+    changeLightness();
   } else if (event.rot.alpha < 353 && event.rot.alpha > 337 ) {
     document.body.style.backgroundColor = "white";
   } else if (event.rot.alpha < 336 && event.rot.alpha > 330 ) {
