@@ -1,0 +1,26 @@
+no/2<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" /> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Mobile Timer</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <h1>Control the Intensity of the Light</h1>
+    <h2>Send</h2>
+    <form id="sendForm">
+      <button id="sendtoSerial" onclick="lightOff()">Turn Off</button>
+      <button id="sendtoSerial" onclick="light1()">Ambient 1</button>
+      <button id="sendtoSerial" onclick="light2()">Ambient 2</button>   
+      <button id="sendtoSerial" onclick="light3()">Ambient 3</button>     
+      <button id="sendtoSerial" onclick="light4()">Focused</button>
+    </form>
+
+    <h2>Received</h2>
+    <span id="lastMsg">(nothing)</span>
+    <script type="module" src="reconnecting-websocket.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
