@@ -40,24 +40,24 @@ function onDocumentReady() {
         console.log("Socket opened");
     }
 
-    sendFormEl.addEventListener('submit', function(evt) {
+    sendFormEl.addEventListener('sendForm', function(evt) {
         evt.preventDefault();
-        var send = document.getElementById('sendtoSerial').value;
+        var send = document.getElementsByClassName('sendtoSerial').value;
         socket.send(send);  
     })
 }
 
     function lightOff() {
-    document.getElementById('sendtoSerial').value = '0';
+    document.getElementsByClassName('sendtoSerial').value = '0';
   }function light1() {
-    document.getElementById('sendtoSerial').value = '1';
+    document.getElementsByClassName('sendtoSerial').value = '1';
   }
   function light2() {
-    document.getElementById('sendtoSerial').value = '2';
+    document.getElementsByClassName('sendtoSerial').value = '2';
   }
   function light3() {
-    document.getElementById('sendtoSerial').value = '3';
+    document.getElementsByClassName('sendtoSerial').value = '3';
   }
   function light4() {
-    document.getElementById('sendtoSerial').value = '4';
+    document.getElementsByClassName('sendtoSerial').value = '4';
   }
