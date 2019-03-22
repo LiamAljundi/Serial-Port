@@ -47,9 +47,15 @@ function onDocumentReady() {
     })
 }
 
-function turnOn() {
-    document.getElementById('sendtoSerial').value = 'a';
+function light1() {
+    document.getElementById('sendtoSerial').value = '1';
   }
-  function turnOff() {
-    document.getElementById('sendtoSerial').value = 'b';
+  function light2() {
+    document.getElementById('sendtoSerial').value = '2';
+  }
+  function light3() {
+    document.getElementById('sendtoSerial').value = '3';
+  }
+  function light4() {
+    document.getElementById('sendtoSerial').value = '4';
   }

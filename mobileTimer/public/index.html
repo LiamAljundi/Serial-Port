@@ -8,11 +8,13 @@ no/2<!doctype html>
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <h1>ws-serial-bridge</h1>
+    <h1>Control the Intensity of the Light</h1>
     <h2>Send</h2>
     <form id="sendForm">
-     <button id="sendtoSerial" onclick="turnOn()">On</button>
-     <button id="sendtoSerial" onclick="turnOff()">Off</button>
+      <button id="sendtoSerial" onclick="light1()">Ambient 1</button>
+      <button id="sendtoSerial" onclick="light2()">Ambient 2</button>   
+      <button id="sendtoSerial" onclick="light3()">Ambient 3</button>     
+      <button id="sendtoSerial" onclick="light4()">Focused</button>
     </form>
 
     <h2>Received</h2>
