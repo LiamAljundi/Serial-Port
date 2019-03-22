@@ -47,7 +47,9 @@ function onDocumentReady() {
     })
 }
 
-function light1() {
+    function lightOff() {
+    document.getElementById('sendtoSerial').value = '0';
+  }function light1() {
     document.getElementById('sendtoSerial').value = '1';
   }
   function light2() {
