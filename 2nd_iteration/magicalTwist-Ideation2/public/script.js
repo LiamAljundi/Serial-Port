@@ -24,6 +24,8 @@ function onData(e) {
   if (!frozen) {
     showData(e);
     colorTheBackground(e);
+    //opacityChange(e);
+
   }
 }
 
@@ -45,30 +47,47 @@ function initWebsocket() {
   };
 }
 
+//creating initial value for opacity
+let lightnessLevel= 100;
+
+function changeLightness() {
+  lightnessLevel--;
+  if (lightnessLevel=0){
+    lightnessLevel=100;
+  }
+    //return hue saturation and lightness
+    return "hsl(120,+ 100%,"+ lightnessLevel+"%)";
+    //hsl stands for (hue, saturation, lightness)
+}
 
 // > greater < smaller
 //rotation
 function colorTheBackground(event){
-  if (event.rot.alpha > 6 && event.rot.alpha < 12) {
-    document.body.style.backgroundColor = "red";
+  if (event.rot.alpha > 0 && event.rot.alpha < 150) {
+    changeLightness();
   } else if (event.rot.alpha > 0 && event.rot.alpha < 6) {
-    document.body.style.backgroundColor = "blue";
+    changeLightness();
   } else if (event.rot.alpha < 360 && event.rot.alpha > 354 ) {
-  document.body.style.backgroundColor = "green";
+    changeLightness();
   } else if (event.rot.alpha < 353 && event.rot.alpha > 337 ) {
     document.body.style.backgroundColor = "white";
-  } else if (event.rot.alpha < 336 && event.rot.alpha > 330 ) {
+ /*  } else if (event.rot.alpha < 336 && event.rot.alpha > 330 ) {
     document.body.style.backgroundColor = "purple";
   } else if (event.rot.alpha < 329 && event.rot.alpha > 323 ) {
     document.body.style.backgroundColor = "yellow"; 
   } else if (event.rot.alpha < 322 && event.rot.alpha > 316 ) {
     document.body.style.backgroundColor = "teal";
-  }
+  } */
+}
 };
  
-// accel
-
-
+// accel B = 2.3
+function opacityChange(event) {
+  if (event.accel.y > 1) {
+    console.log("hi");
+  }
+};
+opacityChange();
  
 
 function showData(m) {
