@@ -24,7 +24,7 @@ function onData(e) {
   if (!frozen) {
     showData(e);
     colorTheBackground(e);
-    //opacityChange(e);
+    opacityChange(e);
 
   }
 }
@@ -56,7 +56,7 @@ function changeLightness() {
     lightnessLevel=100;
   }
     //return hue saturation and lightness
-    return "hsl(120,+ 100%,"+ lightnessLevel+"%)";
+    return "hsl(120, 100%,"+ lightnessLevel+"%)";
     //hsl stands for (hue, saturation, lightness)
 }
 
@@ -64,13 +64,9 @@ function changeLightness() {
 //rotation
 function colorTheBackground(event){
   if (event.rot.alpha > 0 && event.rot.alpha < 150) {
-    changeLightness();
-  } else if (event.rot.alpha > 0 && event.rot.alpha < 6) {
-    changeLightness();
-  } else if (event.rot.alpha < 360 && event.rot.alpha > 354 ) {
-    changeLightness();
-  } else if (event.rot.alpha < 353 && event.rot.alpha > 337 ) {
-    document.body.style.backgroundColor = "white";
+    document.body.style.backgroundColor = changeLightness();
+  } else if (event.rot.alpha < 150 && event.rot.alpha > 360 ) {
+    document.body.style.backgroundColor = "red";
  /*  } else if (event.rot.alpha < 336 && event.rot.alpha > 330 ) {
     document.body.style.backgroundColor = "purple";
   } else if (event.rot.alpha < 329 && event.rot.alpha > 323 ) {
@@ -83,7 +79,7 @@ function colorTheBackground(event){
  
 // accel B = 2.3
 function opacityChange(event) {
-  if (event.accel.y > 1) {
+  if (event.accel.y > 3.2) {
     console.log("hi");
   }
 };
