@@ -1,0 +1,38 @@
+
+body {
+  background-color: rgb(0, 0, 0);
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+h1 {
+  color: darkred;
+}
+a, a:link, a:visited {
+  color: darkred;
+}
+a:hover {
+  color: rgb(73, 255, 1);
+}
+
+#last {
+ position: absolute;
+  width: 100px;
+  height: 100px;
+
+  top: 7%;
+  bottom: 10%;
+  left: 4%;
+ /* margin: -100px 0 0 -150px; */
+  background: rgb(255, 255, 255);
+}
+
+#last>table {
+  border: 0px;
+
+}
+#last td {
+  width: 5rem;
+}
+#last.frozen {
+  background-color: lightblue;
+}
+
