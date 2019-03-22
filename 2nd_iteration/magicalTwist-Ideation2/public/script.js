@@ -63,7 +63,7 @@ function changeLightness() {
 // > greater < smaller
 //rotation
 function colorTheBackground(event){
-  if (event.rot.alpha > 6 && event.rot.alpha < 12) {
+  if (event.rot.alpha > 0 && event.rot.alpha < 150) {
     changeLightness();
   } else if (event.rot.alpha > 0 && event.rot.alpha < 6) {
     changeLightness();
@@ -71,13 +71,14 @@ function colorTheBackground(event){
     changeLightness();
   } else if (event.rot.alpha < 353 && event.rot.alpha > 337 ) {
     document.body.style.backgroundColor = "white";
-  } else if (event.rot.alpha < 336 && event.rot.alpha > 330 ) {
+ /*  } else if (event.rot.alpha < 336 && event.rot.alpha > 330 ) {
     document.body.style.backgroundColor = "purple";
   } else if (event.rot.alpha < 329 && event.rot.alpha > 323 ) {
     document.body.style.backgroundColor = "yellow"; 
   } else if (event.rot.alpha < 322 && event.rot.alpha > 316 ) {
     document.body.style.backgroundColor = "teal";
-  }
+  } */
+}
 };
  
 // accel B = 2.3
