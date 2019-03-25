@@ -50,7 +50,7 @@ function initWebsocket() {
 //creating initial value for opacity
 let lightnessLevel= 100;
 
-function changeLightness() {
+function getColor() {
   lightnessLevel--;
   if (lightnessLevel=0){
     lightnessLevel=100;
@@ -64,11 +64,11 @@ function changeLightness() {
 //rotation
 function colorTheBackground(event){
   if (event.rot.alpha > 0 && event.rot.alpha < 150) {
-    changeLightness();
+    getColor();
   } else if (event.rot.alpha > 0 && event.rot.alpha < 6) {
-    changeLightness();
+    getColor();
   } else if (event.rot.alpha < 360 && event.rot.alpha > 354 ) {
-    changeLightness();
+    getColor();
   } else if (event.rot.alpha < 353 && event.rot.alpha > 337 ) {
     document.body.style.backgroundColor = "white";
  /*  } else if (event.rot.alpha < 336 && event.rot.alpha > 330 ) {

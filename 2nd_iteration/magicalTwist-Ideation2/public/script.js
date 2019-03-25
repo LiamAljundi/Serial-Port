@@ -24,9 +24,10 @@ function onData(e) {
   if (!frozen) {
     showData(e);
     colorTheBackground(e);
+    opacityChange(e);
+    getColor(e);
   }
 }
-
 
 function initWebsocket() {
   const url = 'ws://' + location.host + '/ws';
@@ -45,31 +46,43 @@ function initWebsocket() {
   };
 }
 
+//create initial hue variable
+let hue = 360;
 
-// > greater < smaller
-//rotation
-function colorTheBackground(event){
-  if (event.rot.alpha > 6 && event.rot.alpha < 12) {
-    document.body.style.backgroundColor = "red";
-  } else if (event.rot.alpha > 0 && event.rot.alpha < 6) {
-    document.body.style.backgroundColor = "blue";
-  } else if (event.rot.alpha < 360 && event.rot.alpha > 354 ) {
-  document.body.style.backgroundColor = "green";
-  } else if (event.rot.alpha < 353 && event.rot.alpha > 337 ) {
-    document.body.style.backgroundColor = "white";
-  } else if (event.rot.alpha < 336 && event.rot.alpha > 330 ) {
-    document.body.style.backgroundColor = "purple";
-  } else if (event.rot.alpha < 329 && event.rot.alpha > 323 ) {
-    document.body.style.backgroundColor = "yellow"; 
-  } else if (event.rot.alpha < 322 && event.rot.alpha > 316 ) {
-    document.body.style.backgroundColor = "teal";
+//Loop for color change while moving
+function getColor() {
+  hue--;
+  if (hue == 0) {
+    hue = 360; 
+  }
+  //return hue saturation and lightness
+  return "hsl(" + hue + ", 100%, 80%)";
+  //hsl stands for (hue, saturation, lightness)
+}
+
+// accel B = 2.3
+function opacityChange(event) {
+  if (event.rotMotion.beta > 30) {
+    console.log("hi");
+    document.body.style.backgroundColor = getColor();
+    
+  } else if (event.accel.y < -1) {
+    console.log("hello");
+    
   }
 };
- 
-// accel
+opacityChange();
 
 
- 
+//rotation function
+function colorTheBackground(event){
+  if (event.rot.alpha > 0 && event.rot.alpha < 180) {
+   document.body.style.backgroundColor = "blue";
+  } else if (event.rot.alpha > 180 && event.rot.alpha > 360 ) {
+    document.body.style.backgroundColor = "red";
+ }
+}
+
 
 function showData(m) {
   let html = 'accel';
