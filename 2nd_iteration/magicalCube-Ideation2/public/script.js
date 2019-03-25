@@ -23,7 +23,8 @@ function onData(e) {
   if (!frozen) {
     //showData(e);
     changeLightAmount(e);
-    //dimTheLight(e);
+    dimTheLight(e);
+    
   }
 }
 
@@ -44,21 +45,41 @@ function initWebsocket() {
   };
 }
 
-//sideways control of different "dimming" states of the light
- function changeLightAmount(event){
-  if (event.rot.gamma > 0 && event.rot.gamma < 45) {
-    document.getElementById('last').style.height = "100px";
-    document.getElementById('last').style.width = "100px"
-  } else if (event.rot.gamma > 45 && event.rot.gamma < 90) {
-    document.getElementById('last').style.height = "300px";
-    document.getElementById('last').style.width = "300px"
-  } else if (event.rot.gamma > -90 && event.rot.gamma < -45) {
-    document.getElementById('last').style.height = "600px";
-    document.getElementById('last').style.width = "600px";
-  } else if (event.rot.gamma > -45 && event.rot.gamma < 0) {
-    document.getElementById('last').style.height = "600px";
-    document.getElementById('last').style.width = "900px";
+
+// accel B = 2.3
+//create a function 
+function dimTheLight(e) {
+  if (e.rotMotion.beta > 500 ) {
+    console.log("hi");
+    document.body.style.backgroundColor="grey";
+    document.getElementById('last').style.backgroundColor="grey";
   }
+};
+dimTheLight();
+
+//setting a function with an array of random colors
+/*function colors() {
+  let colorArray = [];
+
+  for (let i = 0; i < 3; i++) {
+    colorArray.push(Math.floor(Math.random() * (255 - 0) + 0)); // adding colors to array by random color codes
+  }
+  // rgb code turn to a  hex code
+  let color = colorArray.map(x => x.toString(16)).join("");
+  //return it in a hex form
+  return `#${color}`;
+} 
+*/
+
+//sideways twist control of 2 different "dimming" states of the light
+ function changeLightAmount(event){
+  if (event.rot.gamma > 0 && event.rot.gamma < 90) {
+    document.getElementById('last').style.width = "500px"
+    document.getElementById('last').style.height = "500px"
+  } else if (event.rot.gamma > -90 && event.rot.gamma < 0) {
+    document.getElementById('last').style.height = "600px";
+    document.getElementById('last').style.width = "1200px"
+  } 
 }; 
 
 //dimTheLight when the object is layed down
