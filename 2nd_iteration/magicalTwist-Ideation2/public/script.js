@@ -79,7 +79,7 @@ function colorTheBackground(event){
  
 // accel B = 2.3
 function opacityChange(event) {
-  if (event.accel.y > 4.2) {
+  if (event.accel.y > 4.1) {
     console.log("hi");
     lightnessLevel -10;
     
