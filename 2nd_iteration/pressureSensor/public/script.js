@@ -40,11 +40,9 @@ function onDocumentReady() {
         console.log("Socket opened");
     }
 
-    sendFormEl.addEventListener('sendForm', function(evt) {
+    sendFormEl.addEventListener('submit', function(evt) {
         evt.preventDefault();
-        var send = document.getElementsByClassName('sendtoSerial').value;
+        var send = document.getElementById('sendtoSerial').value;
         socket.send(send);  
     })
 }
-
-//helllooooooo
