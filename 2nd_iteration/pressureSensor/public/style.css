@@ -5,7 +5,7 @@ html {
   box-sizing: inherit;
 }
 body {
-  background-color: pink;
+  background-color: whitesmoke;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
 }
 h1 {
@@ -18,12 +18,14 @@ a:hover {
   color: black;
 }
 
-#last>table {
-  border: 1px solid gray;
+#lastMsg {
+  font-family: monospace;
 }
-#last td {
-  width: 5rem;
-}
-#last.frozen {
-  background-color: lightblue;
+
+#sentCommands {
+  overflow: scroll;
+  height: 10rem;
+  width: 10rem;
+  border: 1px solid black;
+  background: white;
 }

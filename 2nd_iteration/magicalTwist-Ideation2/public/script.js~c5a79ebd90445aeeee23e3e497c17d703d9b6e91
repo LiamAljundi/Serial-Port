@@ -24,10 +24,11 @@ function onData(e) {
   if (!frozen) {
     showData(e);
     colorTheBackground(e);
-    opacityChange(e);
-    getColor(e);
+    //opacityChange(e);
+
   }
 }
+
 
 function initWebsocket() {
   const url = 'ws://' + location.host + '/ws';
@@ -46,16 +47,16 @@ function initWebsocket() {
   };
 }
 
-//create initial hue variable
-let hue = 360;
+//creating initial value for opacity
+let lightnessLevel= 100;
 
-function changeLightness(event) {
-  lightnessLevel=100;
+function getColor() {
+  lightnessLevel--;
   if (lightnessLevel=0){
     lightnessLevel=100;
   }
     //return hue saturation and lightness
-    return "hsl(120, 100%,"+ lightnessLevel +"%)";
+    return "hsl(120,+ 100%,"+ lightnessLevel+"%)";
     //hsl stands for (hue, saturation, lightness)
 }
 
@@ -63,9 +64,13 @@ function changeLightness(event) {
 //rotation
 function colorTheBackground(event){
   if (event.rot.alpha > 0 && event.rot.alpha < 150) {
-   // document.body.style.backgroundColor = changeLightness();
-  } else if (event.rot.alpha < 150 && event.rot.alpha > 360 ) {
-    document.body.style.backgroundColor = "red";
+    getColor();
+  } else if (event.rot.alpha > 0 && event.rot.alpha < 6) {
+    getColor();
+  } else if (event.rot.alpha < 360 && event.rot.alpha > 354 ) {
+    getColor();
+  } else if (event.rot.alpha < 353 && event.rot.alpha > 337 ) {
+    document.body.style.backgroundColor = "white";
  /*  } else if (event.rot.alpha < 336 && event.rot.alpha > 330 ) {
     document.body.style.backgroundColor = "purple";
   } else if (event.rot.alpha < 329 && event.rot.alpha > 323 ) {
@@ -78,27 +83,12 @@ function colorTheBackground(event){
  
 // accel B = 2.3
 function opacityChange(event) {
-  if (event.accel.y > 4.1) {
+  if (event.accel.y > 1) {
     console.log("hi");
-    lightnessLevel -10;
-    
-  } else if (event.accel.y < -1) {
-    console.log("hello");
-    
   }
 };
 opacityChange();
-
-
-//rotation function
-function colorTheBackground(event){
-  if (event.rot.alpha > 0 && event.rot.alpha < 180) {
-   document.body.style.backgroundColor = "blue";
-  } else if (event.rot.alpha > 180 && event.rot.alpha > 360 ) {
-    document.body.style.backgroundColor = "red";
- }
-}
-
+ 
 
 function showData(m) {
   let html = 'accel';
