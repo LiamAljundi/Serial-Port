@@ -24,6 +24,7 @@ function onData(e) {
     //showData(e);
     changeLightAmount(e);
     dimTheLight(e);
+ // lightLayingDown(e);
     
   }
 }
@@ -49,29 +50,25 @@ function initWebsocket() {
 // accel B = 2.3
 //create a function 
 function dimTheLight(e) {
-  if (e.rotMotion.beta > 500 ) {
+  if (e.rotMotion.beta > 400 ) {
     console.log("hi");
     document.body.style.backgroundColor="grey";
-    document.getElementById('last').style.backgroundColor="grey";
+   document.getElementById('last').style.backgroundColor="grey";
+
   }
+
+/*else {
+  console.log("hello");
+  document.body.style.backgroundColor="black";
+  document.getElementById('last').style.backgroundColor="white";
+
+  
+}*/
 };
+
 dimTheLight();
 
-//setting a function with an array of random colors
-/*function colors() {
-  let colorArray = [];
-
-  for (let i = 0; i < 3; i++) {
-    colorArray.push(Math.floor(Math.random() * (255 - 0) + 0)); // adding colors to array by random color codes
-  }
-  // rgb code turn to a  hex code
-  let color = colorArray.map(x => x.toString(16)).join("");
-  //return it in a hex form
-  return `#${color}`;
-} 
-*/
-
-//sideways twist control of 2 different "dimming" states of the light
+//sideways twist control of 2 different "dimming" states of the light by changing the size of the white window
  function changeLightAmount(event){
   if (event.rot.gamma > 0 && event.rot.gamma < 90) {
     document.getElementById('last').style.width = "500px"
@@ -83,15 +80,15 @@ dimTheLight();
 }; 
 
 //dimTheLight when the object is layed down
- /*function dimTheLight(event){
-  if (event.rot.beta > -2 && event.rot.beta < 3) {
-    document.body.style.backgroundColor = "grey";
-    document.getElementById('last').backgroundColor = "grey";
-  } else {
-    document.body.style.backgroundColor = "black";
-    document.getElementById('last').style.backgroundColor= "white";
-    document.getElementById('last').style.height = "100px";
-    document.getElementById('last').style.width = "100px"
-  }
+ /*function lightLayingDown(event){
+  if (event.accel.z > 10) {
+    document.body.style.backgroundColor = "Black";
+    document.getElementById('last').backgroundColor = "White";
+    document.getElementById('last').style.width = "200px";
+    document.getElementById('last').style.height = "200px";
+    console.log("bye");
+  }  
  }; */
  
+ 
+
