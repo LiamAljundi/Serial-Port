@@ -10,8 +10,8 @@ app.use(express.static(__dirname + '/public'));
 
 
 board.on('ready', function () {
-    var led = new five.Led(10);
-    var led2 = new five.Led(11);
+    var led = new five.Led(4);
+    var led2 = new five.Led(5);
     var led3 = new five.Led(9);
     var button = new five.Button(4);
     
