@@ -25,7 +25,7 @@ function onData(e) {
     showData(e);
     colorTheBackground(e);
     opacityChange(e);
-
+    changeLightness(e);
   }
 }
 
@@ -50,13 +50,13 @@ function initWebsocket() {
 //creating initial value for opacity
 let lightnessLevel= 100;
 
-function changeLightness() {
-  lightnessLevel--;
+function changeLightness(event) {
+  lightnessLevel=100;
   if (lightnessLevel=0){
     lightnessLevel=100;
   }
     //return hue saturation and lightness
-    return "hsl(120, 100%,"+ lightnessLevel+"%)";
+    return "hsl(120, 100%,"+ lightnessLevel +"%)";
     //hsl stands for (hue, saturation, lightness)
 }
 
@@ -64,7 +64,7 @@ function changeLightness() {
 //rotation
 function colorTheBackground(event){
   if (event.rot.alpha > 0 && event.rot.alpha < 150) {
-    document.body.style.backgroundColor = changeLightness();
+   // document.body.style.backgroundColor = changeLightness();
   } else if (event.rot.alpha < 150 && event.rot.alpha > 360 ) {
     document.body.style.backgroundColor = "red";
  /*  } else if (event.rot.alpha < 336 && event.rot.alpha > 330 ) {
@@ -79,10 +79,13 @@ function colorTheBackground(event){
  
 // accel B = 2.3
 function opacityChange(event) {
-  if (event.accel.y > 3.2) {
+  if (event.accel.y > 4.2) {
     console.log("hi");
-  } else if (event.accel.y < 1) {
+    lightnessLevel -10;
+    
+  } else if (event.accel.y < -1) {
     console.log("hello");
+    
   }
 };
 opacityChange();
