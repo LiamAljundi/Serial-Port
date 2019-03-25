@@ -42,3 +42,26 @@ a:hover {
 .sendtoSerial{
   border: 2px orange solid;
 }
+
+#lightGroup{
+  text-align: center;
+  margin-top: 5em;
+}
+
+.dot{
+  border: 5px black transparent;
+  border-radius: 100%;
+  padding:20px;
+  background-color: black;
+}
+
+#newDot1{
+  background-color: yellow;
+}
+#newDot1{
+  background-color: yellow;
+}#newDot3{
+  background-color: yellow;
+}#newDot4{
+  background-color: yellow;
+}

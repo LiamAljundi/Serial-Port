@@ -10,13 +10,20 @@ no/2<!doctype html>
   <body>
     <h1>Control the Intensity of the Light</h1>
     <form id="sendForm">
-      <button class="sendtoSerial" onclick="lightOff()">Turn Off</button>
-      <button class="sendtoSerial" onclick="light1()">Ambient 1</button>
-      <button class="sendtoSerial" onclick="light2()">Ambient 2</button>   
-      <button class="sendtoSerial" onclick="light3()">Ambient 3</button>     
-      <button class="sendtoSerial" onclick="light4()">Focused</button>
+      <input type="submit" class="sendtoSerial" value="Turn Off" onclick="lightOff()"></input>
+      <input type="submit" class="sendtoSerial" value="Ambient 1" onclick="light1()"></input>
+      <input type="submit" class="sendtoSerial" value="Ambient 2" onclick="light2()"></input>
+      <input type="submit" class="sendtoSerial" value="Ambient 3" onclick="light3()"></input>
+      <input type="submit" class="sendtoSerial" value="Focused" onclick="light4()"></input>
     </form>
 
+    <div id="lightGroup">
+      <span id="dot1" class="dot"></span>
+      <span id="dot2" class="dot"></span>
+      <span id="dot3" class="dot"></span>
+      <span id="dot4" class="dot"></span>
+
+    </div>
     <script type="module" src="reconnecting-websocket.js"></script>
     <script src="script.js"></script>
   </body>
