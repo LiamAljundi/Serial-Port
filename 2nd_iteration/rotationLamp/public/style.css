@@ -6,62 +6,62 @@ html {
 }
 body {
   background-color: whitesmoke;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+  font-family: 'Helvetica', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 h1 {
-  color:orange;
+  color:rgb(6, 129, 129);
   text-align: center;
   margin-bottom: 5em;
 }
-a, a:link, a:visited {
-  color: darkred;
-}
-a:hover {
-  color: black;
-}
 
-#lastMsg {
-  font-family: monospace;
-}
 
-#sentCommands {
-  overflow: scroll;
-  height: 10rem;
-  width: 10rem;
-  border: 1px solid black;
-  background: white;
-}
 
-#sendForm{
-  
+
+#controls{
+  width: 100%;
   display: grid;
-  grid-template: 50px / repeat(5, 1fr);
-  grid-gap: 2em;
+  grid-template: repeat(7, 1fr) / repeat(5, 1fr);
+  grid-gap: 1em;
 }
 
 .sendtoSerial{
-  border: 2px orange solid;
+  border: 3px rgb(6, 129, 129) solid;
+  border-radius: 15%;
+  padding: 2em;
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  background-color: #383838; 
 }
 
-#lightGroup{
-  text-align: center;
-  margin-top: 5em;
+#lightOff{
+  grid-row-start: 1;
+  grid-row-end: 3;
+  grid-column-start: 3;
+  grid-column-end: 4;
 }
 
-.dot{
-  border: 5px black transparent;
-  border-radius: 100%;
-  padding:20px;
-  background-color: black;
+#light1{
+  grid-row-start: 3;
+  grid-row-end: 5;
+  grid-column-start: 2;
+  grid-column-end: 3;
 }
+#light2{
+  grid-row-start: 3;
+  grid-row-end: 5;
+  grid-column-start: 3;
+  grid-column-end: 4;
 
-#newDot1{
-  background-color: yellow;
+}#light3{
+  grid-row-start: 3;
+  grid-row-end:5 ;
+  grid-column-start: 4;
+  grid-column-end: 5;
 }
-#newDot1{
-  background-color: yellow;
-}#newDot3{
-  background-color: yellow;
-}#newDot4{
-  background-color: yellow;
+#light4{
+  grid-row-start: 5;
+  grid-row-end:7 ;
+  grid-column-start: 3;
+  grid-column-end: 4;
 }

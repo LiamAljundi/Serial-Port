@@ -15,35 +15,65 @@ function onDocumentReady() {
         // Debug: see raw received message
         //console.log(evt.data);
         
+        
+        function controlLightOff(){
+          document.getElementById("light4").style.backgroundColor = "#383838"; 
+          document.getElementById("light3").style.backgroundColor = "#383838"; 
+          document.getElementById("light2").style.backgroundColor = "#383838"; 
+          document.getElementById("light1").style.backgroundColor = "#383838";
+
+          document.getElementById("light1").style.color = "White";
+          document.getElementById("light2").style.color = "White"; 
+          document.getElementById("light3").style.color = "White"; 
+          document.getElementById("light4").style.color = "White"; 
+        };
+        function ambientOff(){
+          document.getElementById("light3").style.backgroundColor = "#383838"; 
+          document.getElementById("light2").style.backgroundColor = "#383838"; 
+          document.getElementById("light1").style.backgroundColor = "#383838";
+
+          document.getElementById("light1").style.color = "White";
+          document.getElementById("light2").style.color = "White"; 
+          document.getElementById("light3").style.color = "White"; 
+        };
+        function controlLight1(){
+          document.getElementById("light1").style.backgroundColor = "#fdd72e"; 
+          document.getElementById("light1").style.color = "black"; 
+        };
+        function controlLight2(){
+          document.getElementById("light2").style.backgroundColor = "#fdd72e"; 
+          document.getElementById("light2").style.color = "black"; 
+        };
+        function controlLight3(){
+          document.getElementById("light3").style.backgroundColor = "#fdd72e"; 
+          document.getElementById("light3").style.color = "black"; 
+        };
+        function controlLight4(){
+          document.getElementById("light4").style.backgroundColor = "#fdd72e"; 
+          document.getElementById("light4").style.color = "black"; 
+        };
         // Parse message, assuming <Text,Int,Float>
         var d = evt.data.trim();
 
         if(d > 350 && d <550){
-          document.getElementById("dot1").style.backgroundColor = "yellow"; 
+          controlLight1();
         }
         else if(d > 550 && d <750){
-         document.getElementById("dot2").style.backgroundColor = "yellow"; 
-         document.getElementById("dot1").style.backgroundColor = "yellow"; 
-
+          controlLight2();
+          controlLight1();
         } 
         else if(d > 750 && d <950){
-          document.getElementById("dot3").style.backgroundColor = "yellow"; 
-          document.getElementById("dot2").style.backgroundColor = "yellow"; 
-          document.getElementById("dot1").style.backgroundColor = "yellow"; 
- 
+          controlLight3();
+          controlLight2();
+          controlLight1();
         }
         else if(d > 950 && d <1024){
-          document.getElementById("dot4").style.backgroundColor = "yellow"; 
-          document.getElementById("dot3").style.backgroundColor = "yellow"; 
-          document.getElementById("dot2").style.backgroundColor = "yellow"; 
-          document.getElementById("dot1").style.backgroundColor = "yellow"; 
+          controlLight4();
+          ambientOff();
+
         }
         else{
-          document.getElementById("dot1").style.backgroundColor = "black"; 
-          document.getElementById("dot2").style.backgroundColor = "black"; 
-          document.getElementById("dot3").style.backgroundColor = "black"; 
-          document.getElementById("dot4").style.backgroundColor = "black"; 
-
+          controlLightOff();
         }
         
 
