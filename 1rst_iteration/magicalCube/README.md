@@ -27,4 +27,5 @@ It will continue running. To stop it again, press CTRL+C (PC) or CMD+C (Mac).
 * [Device Orientation & Motion](https://developers.google.com/web/fundamentals/native-hardware/device-orientation/) (Google)
 * [Device Orientation](https://developer.mozilla.org/en-US/docs/Web/API/Detecting_device_orientation) (MDN)
 
-# This README is based on the one provided by https://github.com/ClintH/interactivity/tree/master/websockets/motion-stream
+# This README is based on:
+https://github.com/ClintH/interactivity/tree/master/websockets/motion-stream
