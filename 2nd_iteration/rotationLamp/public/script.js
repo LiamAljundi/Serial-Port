@@ -11,11 +11,9 @@ function onDocumentReady() {
     var sendFormEl = document.getElementById('sendForm');
     var lastMsg = null;
     lastMsgEl = document.getElementById('lastMsg');
-    socket.onmessage = function(evt) {
-        // Debug: see raw received message
-        //console.log(evt.data);
+    socket.onmessage = function(evt) {        
         
-        
+        //function to style buttons when all light are off
         function controlLightOff(){
           document.getElementById("light4").style.backgroundColor = "#383838"; 
           document.getElementById("light3").style.backgroundColor = "#383838"; 
@@ -27,6 +25,8 @@ function onDocumentReady() {
           document.getElementById("light3").style.color = "White"; 
           document.getElementById("light4").style.color = "White"; 
         };
+
+        //function to style buttons when ambient lights are off
         function ambientOff(){
           document.getElementById("light3").style.backgroundColor = "#383838"; 
           document.getElementById("light2").style.backgroundColor = "#383838"; 
@@ -36,42 +36,56 @@ function onDocumentReady() {
           document.getElementById("light2").style.color = "White"; 
           document.getElementById("light3").style.color = "White"; 
         };
+         
+        //when ambient1 is on
         function controlLight1(){
           document.getElementById("light1").style.backgroundColor = "#fdd72e"; 
           document.getElementById("light1").style.color = "black"; 
         };
+
+        //when ambient2 is on
         function controlLight2(){
           document.getElementById("light2").style.backgroundColor = "#fdd72e"; 
           document.getElementById("light2").style.color = "black"; 
         };
+
+        //when ambient3 is on
         function controlLight3(){
           document.getElementById("light3").style.backgroundColor = "#fdd72e"; 
           document.getElementById("light3").style.color = "black"; 
         };
+
+        //when focused is on
         function controlLight4(){
           document.getElementById("light4").style.backgroundColor = "#fdd72e"; 
           document.getElementById("light4").style.color = "black"; 
         };
-        // Parse message, assuming <Text,Int,Float>
+
+        // communication with Arduino: get data values from the potentiometer 
         var d = evt.data.trim();
 
+        //when the value send by Arduino matches, turn ambient1 on
         if(d > 350 && d <550){
           controlLight1();
         }
+        //if it matches, turn ambient1 and ambient2 on
         else if(d > 550 && d <750){
           controlLight2();
           controlLight1();
         } 
+        //if it matches, turn ambient1, ambient2 and ambient3 on
         else if(d > 750 && d <950){
           controlLight3();
           controlLight2();
           controlLight1();
         }
+        //if it matches, turn focused on and all ambients off
         else if(d > 950 && d <1024){
           controlLight4();
           ambientOff();
 
         }
+        //if the value is less than 350, turn all off
         else{
           controlLightOff();
         }
@@ -109,21 +123,27 @@ function onDocumentReady() {
     })
 }
 
-    function lightOff() {
-    document.getElementsByClassName('sendtoSerial').value = '0';
+  //Buttons to control the light 
+  function lightOff() {
+    document.getElementsById('sendtoSerial').value = '0';
     console.log('button pressed')
-  }function light1() {
+  }
+  
+  function light1() {
     document.getElementsByClassName('sendtoSerial').value = '1';
     console.log('button pressed')
   }
+
   function light2() {
     document.getElementsByClassName('sendtoSerial').value = '2';
     console.log('button pressed')
   }
+
   function light3() {
     document.getElementsByClassName('sendtoSerial').value = '3';
     console.log('button pressed')
   }
+
   function light4() {
     document.getElementsByClassName('sendtoSerial').value = '4';
     console.log('button pressed')
