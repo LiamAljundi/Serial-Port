@@ -23,9 +23,11 @@ function onData(e) {
  // console.log("hello its Clint's code");
   if (!frozen) {
     showData(e);
-    colorTheBackground(e);
+    //colorTheBackground(e);
     opacityChange(e);
     getColor(e);
+    //changeLightness(e);
+    colorTheBackground(e);
   }
 }
 
@@ -49,6 +51,7 @@ function initWebsocket() {
 //create initial hue variable
 let hue = 360;
 
+<<<<<<< HEAD
 function changeLightness(event) {
   lightnessLevel=100;
   if (lightnessLevel=0){
@@ -58,6 +61,22 @@ function changeLightness(event) {
     return "hsl(120, 100%,"+ lightnessLevel +"%)";
     //hsl stands for (hue, saturation, lightness)
 }
+=======
+//Loop for color change while moving
+function getColor() {
+  hue--;
+  if (hue == 100) {
+    hue = 360; 
+  }
+  //return hue saturation and lightness
+  return "hsl("+hue+",99%,80%)";
+ 
+  //hsl stands for (hue, saturation, lightness)
+};
+
+//var colorCode = getColor() +
+//colorCode.toString();
+>>>>>>> 3d47e5824f92e6f24c49be655d5846bdcb27bde2
 
 // > greater < smaller
 //rotation
@@ -78,27 +97,38 @@ function colorTheBackground(event){
  
 // accel B = 2.3
 function opacityChange(event) {
+<<<<<<< HEAD
   if (event.accel.y > 4.1) {
+=======
+  if (event.rotMotion.beta > 10) {
+>>>>>>> 3d47e5824f92e6f24c49be655d5846bdcb27bde2
     console.log("hi");
     lightnessLevel -10;
     
   } else if (event.accel.y < -1) {
     console.log("hello");
-    
   }
 };
-opacityChange();
 
 
-//rotation function
+//function for changing lightness by splitting a hsl string and changing the lightness value
+function changeLightness(color) {
+let lightnessLevel = 50;
+color.split("");//[h s l ( 0 0 0 , 9 9 % , 8 0 % )]
+color.splice(13,14,lightnessLevel);
+var result = color.join("");
+return result;
+    
+    //return "hsl("+ hue +", 100%,"+ lightnessLevel+"%)";
+    //hsl stands for (hue, saturation, lightness)
+};
+
 function colorTheBackground(event){
   if (event.rot.alpha > 0 && event.rot.alpha < 180) {
-   document.body.style.backgroundColor = "blue";
-  } else if (event.rot.alpha > 180 && event.rot.alpha > 360 ) {
-    document.body.style.backgroundColor = "red";
- }
-}
-
+   document.body.style.backgroundColor = changeLightness(getColor);
+   console.log("it is working");
+  }
+};
 
 function showData(m) {
   let html = 'accel';
