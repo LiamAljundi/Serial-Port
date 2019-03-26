@@ -1,6 +1,6 @@
 # magicalCube 
 
-Magical cube is a prototype is built using https://github.com/ClintH/interactivity/tree/master/websockets/motion-stream tutorial which  streams motion and orientation data from a mobile device via websockets to a server. From there, the server distributes it to every connected client. The code here is intended to be used as part of a tangible cube prototype that in turn switches the browser window's color when layed on different sides.
+The magicalCube prototype is built using https://github.com/ClintH/interactivity/tree/master/websockets/motion-stream tutorial which  streams motion and orientation data from a mobile device via websockets to a server. From there, the server distributes it to every connected client. The code here is intended to be used as part of a tangible cube prototype that in turn switches the browser window's color when layed on different sides.
 
 # Geting started
 
