@@ -1,6 +1,8 @@
 # magicalCube 
 
-The magicalCube prototype is built using https://github.com/ClintH/interactivity/tree/master/websockets/motion-stream tutorial which  streams motion and orientation data from a mobile device via websockets to a server. From there, the server distributes it to every connected client. The code here is intended to be used as part of a tangible cube prototype that in turn switches the browser window's color when layed on different sides.
+The magicalCube prototype is built using https://github.com/ClintH/interactivity/tree/master/websockets/motion-stream tutorial which  streams motion and orientation data from a mobile device via websockets to a server. From there, the server distributes it to every connected client.The code here is intended to be used as part of a tangible cube prototype that immitates tangible light controls (the web browser's window being the light source immitation) and:
+
+* switches the browser window's color when layed on different sides
 
 # Geting started
 
@@ -26,6 +28,10 @@ It will continue running. To stop it again, press CTRL+C (PC) or CMD+C (Mac).
 
 * [Device Orientation & Motion](https://developers.google.com/web/fundamentals/native-hardware/device-orientation/) (Google)
 * [Device Orientation](https://developer.mozilla.org/en-US/docs/Web/API/Detecting_device_orientation) (MDN)
+
+# Authors
+* Victor Melbye Frederiksen
+* Julija Rukanskaite
 
 # This README is based on:
 https://github.com/ClintH/interactivity/tree/master/websockets/motion-stream
