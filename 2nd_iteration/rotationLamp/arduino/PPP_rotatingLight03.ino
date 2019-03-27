@@ -21,21 +21,22 @@ int brightnessVal = 0;
 int pinCountAmbient = 3;
 int pinCountFocused = 4;
 
-int lightMode= Serial.read()
+int lightMode= Serial.read();
 
 
 void setup() {
    Serial.begin(9600);
-  
-    for (int i = 0; i < pinCountAmbient; i++) {
-    pinMode(led2[i], OUTPUT);
-    pinMode(led3[i], OUTPUT);
-  }
+
     for (int i = 0; i < pinCountFocused; i++) {
     pinMode(led4[i], OUTPUT);
   }
-    for (int i = 0; i < 2; i++) {
+    for (int i = 0; i < pinCountAmbient; i++) {
     pinMode(led1[i], OUTPUT);
+    pinMode(led2[i], OUTPUT);
+
+  }
+      for (int i = 0; i < 2; i++) {
+    pinMode(led3[i], OUTPUT);
   }
   
   
@@ -44,10 +45,12 @@ void setup() {
 void loop() {
   
     brightnessVal = pot.read();
+    Serial.println(brightnessVal);
     
     //Code to control the light from the browser
     if(Serial.available()){
-      §
+      
+      
       for (int i = 0; i < pinCountAmbient; i++) {
       
         if( lightMode == 1)
@@ -148,3 +151,4 @@ void loop() {
     
     
 }
+
