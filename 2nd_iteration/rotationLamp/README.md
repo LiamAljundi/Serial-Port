@@ -46,3 +46,4 @@ Bundles:
 
 Credits:
 * Arduino serial I/O: http://forum.arduino.cc/index.php?topic=396450
+* Interactivity repository by ClintH https://github.com/ClintH/interactivity
