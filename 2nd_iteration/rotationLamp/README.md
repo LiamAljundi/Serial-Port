@@ -1,4 +1,4 @@
-Rotation Lamp
+# Rotation Lamp
 
 This prototype allows the student to control the intensity of the light by rotating a cylinder-shaped lamp, to switch light modes from ambient to focused. The lamp has 3 ambient modes and 1 focused/direct light, to provide good lighting for different study activities. The lamp is connected to a potentiometer that rotates with the lamp. The values of the potentiometer are sent to JavaScript through the serial-bridge, the values are processed and used to change the colors of the buttons on the HTML page. 
 
