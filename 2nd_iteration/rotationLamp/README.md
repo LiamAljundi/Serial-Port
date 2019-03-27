@@ -1,12 +1,12 @@
-# ws-serial-bridge
+Rotation Lamp
 
-This demonstrates bidirectional communication between an Arduino sketch and Javascript running in the browser.
+This prototype allows the student to control the intensity of the light by rotating a cylinder-shaped lamp, to switch light modes from ambient to focused. The lamp has 3 ambient modes and 1 focused/direct light, to provide good lighting for different study activities. The lamp is connected to a potentiometer that rotates with the lamp. The values of the potentiometer are sent to JavaScript through the serial-bridge, the values are processed and used to change the colors of the buttons on the HTML page. 
 
 # Architecture
 
 The demo consists of three bits: an Arduino sketch, a Node.js app, and a web app.
 
-* The Arduino sketch sends/receives via serial over USB
+* The Arduino sketch sends potentiometer value and receives values from script.js via serial over USB
 * A Node.js app connects to the computer's serial port. It's a webserver with websockets enabled. When serial data is received from the Arduino, it broadcasts it to all clients connected via websockets. When data is received on the websocket, it sends it to the Arduino. You can open the connection to your Node.js server from any number of web browsers, including mobile devices!
 
 
