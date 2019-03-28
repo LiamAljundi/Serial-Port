@@ -22,9 +22,9 @@ function onData(e) {
 
   if (!frozen) {
     //showData(e);
+    //call the functions that change light and ambience
     changeLightAmount(e);
     dimTheLight(e);
- // lightLayingDown(e);
     
   }
 }
@@ -46,9 +46,7 @@ function initWebsocket() {
   };
 }
 
-
-// accel B = 2.3
-//create a function 
+//create a function for dimming the light once the phone inside the prototype is accelerated on a side twist 
 function dimTheLight(e) {
   if (e.rotMotion.beta > 400 ) {
     console.log("hi");
@@ -56,14 +54,6 @@ function dimTheLight(e) {
    document.getElementById('last').style.backgroundColor="grey";
 
   }
-
-/*else {
-  console.log("hello");
-  document.body.style.backgroundColor="black";
-  document.getElementById('last').style.backgroundColor="white";
-
-  
-}*/
 };
 
 dimTheLight();
@@ -79,16 +69,5 @@ dimTheLight();
   } 
 }; 
 
-//dimTheLight when the object is layed down
- /*function lightLayingDown(event){
-  if (event.accel.z > 10) {
-    document.body.style.backgroundColor = "Black";
-    document.getElementById('last').backgroundColor = "White";
-    document.getElementById('last').style.width = "200px";
-    document.getElementById('last').style.height = "200px";
-    console.log("bye");
-  }  
- }; */
- 
  
 
