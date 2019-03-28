@@ -20,9 +20,9 @@ function onData(e) {
   var accelGrav = e.accelGrav;
   var rot = e.rot;
   
- // console.log("hello its Clint's code");
   if (!frozen) {
     showData(e);
+  //call the function for changing background color
     colorTheBackground(e);
   }
 }
@@ -45,60 +45,8 @@ function initWebsocket() {
   };
 }
 
-/* //window.addEventListener("deviceorientation", handleOrientation, true);
-function handleOrientation(event) {
-  if (200 > event.alpha > 129) {
-document.body.style.backgroundColor = "red";
-console.log("Hello");
-}
-};*/
 
-// greater than > , less than <
-// uppright
-/* function colorTheBackground(event){
-  if (event.rot.beta < 80 && event.rot.beta > 1) {
-    console.log("Hello bye");
-    document.body.style.backgroundColor = "red";
-  } else if (event.rot.beta > 81 && event.rot.beta < 170) {
-    document.body.style.backgroundColor = "blue";
-  } else if (event.rot.beta > 171 && event.rot.beta ) {
-  document.body.style.backgroundColor = "green";
-  } else if (event.rot.gamma < 70 && event.rot.beta < 1 && event.rot.beta < 170) {
-  document.body.style.backgroundColor = "purple";
-  } else if (event.rot.gamma > -70 && event.rot.beta < -1)  {
-  document.body.style.backgroundColor = "yellow";
-  }
-}; */
-
-//sideways
-/*
- function colorTheBackground(event){
-  if (event.rot.gamma > 0 && event.rot.gamma < 30 && event.rot.beta < 1 && event.rot.beta > -178) {
-    document.body.style.backgroundColor = "red";
-  } else if (event.rot.gamma < -60) {
-    document.body.style.backgroundColor = "blue";
-  } else if (event.rot.alpha > 220 && event.rot.beta < -179) {
-  document.body.style.backgroundColor = "green";
-  }
-}; 
-*/
-/* 
-function colorTheBackground(event){
-  if (event.rot.beta > -1 && event.rot.beta < 80 ) {
-    console.log("Hello bye");
-    document.body.style.backgroundColor = "red";
-  }
- else if(event.rot.beta > 81 && event.rot.beta <170  )
- { document.body.style.backgroundColor = "blue";}
-
- else if(event.rot.beta >170 && event.rot.beta < 200 )
- { document.body.style.backgroundColor = "green";}
-
- else if(event.rot.beta >-105 && event.rot.beta < -95 )
- { document.body.style.backgroundColor = "yellow";}
-};
- */
-//rotation
+//creating background color change as an outcome of phone rotation according to being placed in a cube
  function colorTheBackground(event){
   if (event.rot.alpha > 8 && event.rot.alpha < 45) {
     document.body.style.backgroundColor = "red";
