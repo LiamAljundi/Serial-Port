@@ -1,7 +1,5 @@
 # Online-adressable lighting
-Prototyping and Programming final project
-
-about about about about about about
+This project uses websockets (serial-bridge and mobile stream), together with Arduino sketches to build interactive light objects. The focus of our group was "Focus while studying in the library", which was explored by building a variety of prototypes using physical and digital tools. The examples in the 1st iteration, used mainly Arduino sketche, while the examples in the 2nd iteration used websockets and Johnny Five library on top of the existing sketches. 
 
 ## Getting Started
 
