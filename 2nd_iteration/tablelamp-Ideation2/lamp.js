@@ -1,12 +1,13 @@
-var http = require('http');
-var express = require('express');
-var five = require('johnny-five');
+var http = require('http'); effective will working in http
+var express = require('express'); web server
+var five = require('johnny-five'); // API
+// this communicate between the clint site and server site and provide real time effects.
 var io = require('socket.io');
 
 var board = new five.Board();
 var app = express();
 var PORT = 8080;
-app.use(express.static(__dirname + '/public'));
+app.use(express.static(__dirname + '/public')); // our server static file is located
 
 
 board.on('ready', function () {
@@ -22,7 +23,7 @@ board.on('ready', function () {
       });
 
  
-
+// this is our web server
     var server = http.createServer(app).listen(PORT, function (req, res) {
  
     });
