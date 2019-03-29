@@ -1,4 +1,4 @@
-#pressureSensor - studyPillow
+# PressureSensor - studyPillow
 
 PressureSensor uses a Forse Sensitive Resistor(FSR) connected to an arduino which controlls 2 LED's. The purpose is to be able to use the data from the FSR as an on/off button. This data is also connected to a browser through serial-bridge for further GUI opportunities.
 
