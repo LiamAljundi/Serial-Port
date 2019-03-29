@@ -1,10 +1,7 @@
-# !! deprecated
+#pressureSensor - studyPillow
 
-This sample remains to demonstrate simple bidirectional communication, but consider  instead the `json-serial-bridge` sample. It uses a more robust way of piping data back and forth.
+PressureSensor uses a Forse Sensitive Resistor(FSR) connected to an arduino which controlls 2 LED's. The purpose is to be able to use the data from the FSR as an on/off button. This data is also connected to a browser through serial-bridge for further GUI opportunities.
 
-# ws-serial-bridge
-
-This demonstrates bidirectional communication between an Arduino sketch and Javascript running in the browser.
 
 # Architecture
 
