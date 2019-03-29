@@ -5,7 +5,7 @@ about about about about about about
 
 ## Getting Started
 
-The examples are intended to be used with a smartphone, a computer and an Arduino mino
+The examples are intended to be used with a smartphone, a computer and an Arduino micro hardware
 
 ## Built with
 
