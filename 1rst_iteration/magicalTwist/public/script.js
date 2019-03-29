@@ -20,9 +20,10 @@ function onData(e) {
   var accelGrav = e.accelGrav;
   var rot = e.rot;
   
- // console.log("hello its Clint's code");
+
   if (!frozen) {
     showData(e);
+      //call the function for changing background color
     colorTheBackground(e);
   }
 }
@@ -46,7 +47,7 @@ function initWebsocket() {
 }
 
 
-//rotation
+//creating background color change as an outcome of continuous phone rotation 
  function colorTheBackground(event){
   if (event.rot.alpha > 0 && event.rot.alpha < 15) {
     document.body.style.backgroundColor = "gold";}
